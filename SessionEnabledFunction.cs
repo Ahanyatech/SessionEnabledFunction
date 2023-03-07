@@ -10,7 +10,7 @@ namespace SessionEnabledFunction
         [FunctionName("SessionEnabledFunction")]
         public void Run([ServiceBusTrigger("%QueueName%", Connection = "ServiceBusConString", IsSessionsEnabled = true)]string myQueueItem, ILogger log)
         {
-            log.LogInformation($"{myQueueItem}");
+            log.LogInformation("This is the message:" + $"{myQueueItem}");
         }
     }
 }
