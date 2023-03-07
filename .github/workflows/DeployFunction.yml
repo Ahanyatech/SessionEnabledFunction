@@ -48,7 +48,7 @@ jobs:
       shell: pwsh # For Linux, use bash
       run: |
         pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
-        dotnet build --configuration Release --output ./output
+        dotnet build --configuration Release --property:PublishDir=DIR
         popd
 
     - name: 'Run Azure Functions Action'
